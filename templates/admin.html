@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+
+<body>
+    <h1>Admin Dashboard</h1>
+    <h3>visitors are </h3>
+    <center>
+        <table border="2" cellpadding="15">
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+            </tr>
+
+            {% for user in users %}
+
+            <tr>
+                <td>{{ user[0] }}</td>
+                <td>{{ user[1] }}</td>
+                <td>{{ user[2] }}</td>
+
+              <td>
+                    <a href="/delete/{{ user[0] }}">
+                        <button>Delete</button>
+                    </a>
+                </td> </tr>
+            {% endfor %}
+
+        </table>
+    </center>
+</body>
+</html>
+
+
